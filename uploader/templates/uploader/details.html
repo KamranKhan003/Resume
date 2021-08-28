@@ -1,0 +1,65 @@
+{% extends 'uploader/base.html' %}
+
+{% block title %}<title>Detail</title>{% endblock title %}
+
+
+{% block contant %}
+    <div class="container shadow m-5 p-5 bg-white">
+        <h5>Candidate: {{detail.full_name}}</h5>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{detail.image.url}}" class="img-thumbnail" alt="Candidate pic">
+            </div>
+            <div class="col-md-8">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Name</th>
+                        <td class='fload-end'>{{detail.full_name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Father Name</th>
+                        <td>{{detail.father_name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Date Of Brith</th>
+                        <td>{{detail.dob}}</td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>{{detail.city}}</td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td>{{detail.gender}}</td>
+                    </tr>
+                    <tr>
+                        <th>City Post Code</th>
+                        <td>{{detail.pin}}</td>
+                    </tr>
+                    <tr>
+                        <th>Mobile Number</th>
+                        <td>{{detail.mobile}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email Adress</th>
+                        <td>{{detail.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Job Cities</th>
+                        <td>{{detail.job_city}}</td>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <td>{{detail.state}}</td>
+                    </tr>
+                    <tr>
+                        <th>Download CV</th>
+                        <td><a href="{{detail.file.url}}">Click To Download</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <a href="{% url 'home' %}" class="btn btn-back">Back</a>
+        <a href="{% url 'update' detail.id %}" class="btn btn-update">Update</a>
+    </div>
+{% endblock contant %}

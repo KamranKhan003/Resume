@@ -1,0 +1,31 @@
+{% extends 'uploader/base.html' %}
+
+{% block title %}<title>Resume</title>{% endblock title %}
+
+{% block contant %}
+ <div class="container shadow m-5 p-5 bg-white">
+        <h3>Fill Form</h3>
+        <div class="row gy-3">
+            <div class="col-lg-8">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="Upload" class="btn" id="grad">
+                </form>
+            </div>
+            <div class="col-lg-3 offset-1 clear-fix">
+                <h4 class='text-center'>Candidate Lists</h4><hr>
+                {% for condidate in condidates %}
+                    <h6 class='d-inline'>{{condidate.id}}</h6>
+                    <a href="{% url 'details' condidate.id %}" class="btn btn-link">{{condidate.full_name}}</a>
+                    <form action="{% url 'delete' condidate.id %}" method="POST" class="d-inline float-end">
+                        {% csrf_token %}
+                        <button type='submit' class="btn btn-delete">Delete</button>
+                    </form>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock contant %}

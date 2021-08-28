@@ -1,0 +1,20 @@
+{% extends 'uploader/base.html' %}
+
+{% block title %}<title>Deletel</title>{% endblock title %}
+
+
+{% block contant %}
+    <div class="container shadow m-5 p-5 bg-white">
+        <h1>Update</h1>
+        <div class="row gy-3">
+            <div class="col-lg-8">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="Update" class="btn btn-update">
+                    <a href="{% url 'home' %}" class="btn btn-back" id="">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock contant %}
