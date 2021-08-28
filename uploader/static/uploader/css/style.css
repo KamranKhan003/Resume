@@ -1,0 +1,25 @@
+#id_gender, #id_job_city{
+    list-style: none;
+}
+
+#id_gender > li:first-child{
+    display: none;
+}
+
+#grad {
+    background-image: linear-gradient(80deg,lightblue, lightgreen);
+  }
+
+.btn-update {
+    background-image: linear-gradient(80deg,rgb(173, 230, 185), rgb(255, 255, 145));
+  }
+
+.btn-back {
+    background-image: linear-gradient(80deg,rgb(226, 238, 229), rgb(156, 156, 153));
+
+}
+
+.btn-delete {
+    background-image: linear-gradient(80deg,rgb(245, 160, 203), rgb(255, 255, 255));
+
+}
